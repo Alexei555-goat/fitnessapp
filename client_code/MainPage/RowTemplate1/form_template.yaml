@@ -1,3 +1,13 @@
-components: []
+components:
+- event_bindings: {}
+  layout_properties: {column: PPFMZI}
+  name: button_anmelden
+  properties: {text: ANMELDEN}
+  type: Button
+- event_bindings: {}
+  layout_properties: {column: FYYZBJ}
+  name: button_info
+  properties: {text: INFO}
+  type: Button
 container: {type: DataRowPanel}
 is_package: true

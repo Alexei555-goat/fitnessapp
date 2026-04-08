@@ -1,4 +1,4 @@
-from ._anvil_designer import RowTemplate1Template
+from ._anvil_designer import RowTemplate2Template
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -6,7 +6,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class RowTemplate1(RowTemplate1Template):
+class RowTemplate2(RowTemplate2Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -15,11 +15,5 @@ class RowTemplate1(RowTemplate1Template):
 
   @handle("button_anmelden", "click")
   def button_anmelden_click(self, **event_args):
-    open_form("AnmeldenPage", self.item)
-    pass
-
-  @handle("button_info", "click")
-  def button_info_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    open_form("MitgliedPage", self.item)
-    pass
+    anvil.server.call('anmelden', self.item['mitglied_id'], self.item['kurs_id'])
+    open_form('MainPage')

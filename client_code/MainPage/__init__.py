@@ -10,9 +10,24 @@ class MainPage(MainPageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.load_kurse()
 
     # Any code you write here will run before the form opens.
-    result = db.call("query_database", "SELECT * FROM Kurs")
 
-    for r in result:
-      print(r)
+    #returnValue = db.call('query_database', "SELECT * FROM Kurs")
+    #for v in returnValue:
+    #  print(v)
+
+  def load_kurse(self):
+    rows = db.call("query_kurs_database")
+    
+    data = []
+    for v in rows:
+      data.append({
+        'kurs':       v[0],
+        'wochentag':  v[1],
+        'Uhrzeit':    v[2],
+        'trainer':    v[3],
+        'Teilnehmer': v[4],
+      })
+    self.repeating_panel_fitess.items = data

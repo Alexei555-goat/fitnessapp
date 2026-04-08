@@ -4,7 +4,7 @@ components:
   properties: {align: center, bold: true, font_size: 29, text: Fitness app}
   type: Label
 - components:
-  - name: repeating_panel_1
+  - name: repeating_panel_fitess
     properties: {item_template: MainPage.RowTemplate1}
     type: RepeatingPanel
   layout_properties: {grid_position: 'YOJZCI,OJWYSC'}

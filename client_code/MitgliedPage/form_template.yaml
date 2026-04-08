@@ -1,0 +1,23 @@
+components:
+- layout_properties: {grid_position: 'AIHJXH,ADWGWD'}
+  name: label_1
+  properties: {align: center, bold: true, font_size: 31, text: Mitglieder}
+  type: Label
+- components:
+  - name: repeating_panel_mitglied
+    properties: {item_template: MitgliedPage.RowTemplate3}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'EHWPLT,OGQMME'}
+  name: data_grid_1
+  properties:
+    columns:
+    - {data_key: vorname, id: JKSDUP, title: Vorname}
+    - {data_key: nachname, id: HCNRUF, title: Nachname}
+  type: DataGrid
+- event_bindings: {}
+  layout_properties: {grid_position: 'ODUDXP,AJRHAR'}
+  name: button_back
+  properties: {text: BACK}
+  type: Button
+container: {type: ColumnPanel}
+is_package: true
