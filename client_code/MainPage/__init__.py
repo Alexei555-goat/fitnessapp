@@ -12,12 +12,6 @@ class MainPage(MainPageTemplate):
     self.init_components(**properties)
     self.load_kurse()
 
-    # Any code you write here will run before the form opens.
-
-    #returnValue = db.call('query_database', "SELECT * FROM Kurs")
-    #for v in returnValue:
-    #  print(v)
-
   def load_kurse(self):
     rows = db.call("query_kurs_database")
     
